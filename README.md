@@ -7,3 +7,5 @@ https://github.com/barnaszabi/patchwork
 (https://github.com/green-fox-academy/barnaszabi "GreenFox repo")
 
 https://github.com/barnaszabi/barnaszabi.github.io
+
+https://barnaszabi.github.io
