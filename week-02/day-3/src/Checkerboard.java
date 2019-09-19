@@ -9,35 +9,45 @@ public class Checkerboard {
         // Fill the canvas with a checkerboard pattern.
         int x = 0;
         int y = 0;
-        int size = 30;
+        int size = 40;
         int counterX = 0;
-        int counterY = 0;
+        int counterY;
         do
         {
-            do {
-                if (counterY % 2 != 0)
+            counterY = 0;
+            do
+            {
+                if (counterX % 2 ==0)
                 {
-                    graphics.drawRect(x,y,size,size);
+                    if (counterY % 2 != 0)
+                    {
+                        graphics.drawRect(x,y,size,size);
+                    }
+                    else
+                    {
+                        graphics.fillRect(x,y,size,size);
+                    }
+                    counterY++;
+                    y += size;
                 }
                 else
                 {
-                    graphics.fillRect(x,y,size,size);
+                    if (counterY % 2 == 0)
+                    {
+                        graphics.drawRect(x,y,size,size);
+                    }
+                    else
+                    {
+                        graphics.fillRect(x,y,size,size);
+                    }
+                    counterY++;
+                    y += size;
                 }
-                counterY++;
-                y += size;
             }
             while ((y < 320));
             y=0;
-            if (counterX % 2 == 0)
-            {
-                graphics.fillRect(x,y,size,size);
-            }
-            else
-            {
-                graphics.drawRect(x,y,size,size);
-            }
-            x += size;
             counterX++;
+            x+=size;
         }
         while ((x < 320));
 
