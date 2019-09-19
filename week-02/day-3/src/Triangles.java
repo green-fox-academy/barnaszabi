@@ -19,7 +19,6 @@ public class Triangles
         graphics.drawPolygon(x, y, 3);
         for (int i = 1; i < 8; i++)
         {
-
             x[0]-=xPush*width;
             x[1]-=xPush*width;
             x[2]-=xPush*width;

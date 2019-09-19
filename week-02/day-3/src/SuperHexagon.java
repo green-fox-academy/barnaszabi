@@ -11,26 +11,33 @@ public class SuperHexagon
     {
 
         int section = 0;
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 2; i++)
+        {
             int[] x = {180,200,210,200,180,170};
             int[] y = {0,0,20,40,40,20};
             int xIncrement;
             int yIncrement=y[3]-y[0];
             int height = 7;
-            if (section == 0) {
+            if (section == 0)
+            {
                 xIncrement=-(x[2]-x[0]);
             }
-            else {
+            else
+            {
                 xIncrement=x[2]-x[0];
             }
-            for (int j = 0; j < 4; j++) {
-                for (int k = 0; k < height; k++) {
+            for (int j = 0; j < 4; j++)
+            {
+                for (int k = 0; k < height; k++)
+                {
                     graphics.drawPolygon(x,y,6);
-                    for (int l = 0; l < y.length; l++) {
+                    for (int l = 0; l < y.length; l++)
+                    {
                         y[l]+=yIncrement;
                     }
                 }
-                for (int k = 0; k < x.length; k++) {
+                for (int k = 0; k < x.length; k++)
+                {
                     x[k]+=xIncrement;
                     y[k]-=yIncrement*height-(yIncrement/2);
                 }
