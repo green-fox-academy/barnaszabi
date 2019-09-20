@@ -3,6 +3,7 @@ public class PrintBigger
 {
     public static void main(String[] args)
     {
+        // Write a program that asks for two numbers and prints the bigger one
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter two number: ");
         int a = scanner.nextInt();

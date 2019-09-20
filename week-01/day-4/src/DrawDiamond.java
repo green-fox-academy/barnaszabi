@@ -38,6 +38,7 @@ public class DrawDiamond
                     currentStars -= 2;
                 }
             }
+            //not a diamond
             else
             {
                 if (i < (lines)/2)
