@@ -43,6 +43,9 @@ public class Bubble
     }
     public static void main(String[] args)
     {
+        //  Create a function that takes a list of numbers as parameter
+        //  Returns a list where the elements are sorted in ascending numerical order
+        //  Make a second boolean parameter, if it's `true` sort that list descending
         int [] first = bubble(new int[] {34, 12, 24, 9, 5});
         int[] second = advancedBubble(new int[] {34, 12, 24, 9, 5}, true);
         for (int i = 0; i < first.length; i++)

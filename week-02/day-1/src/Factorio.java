@@ -11,6 +11,8 @@ public class Factorio
     }
     public static void main(String[] args)
     {
+        // - Create a function called `factorio`
+        //   that returns it's input's factorial
         System.out.println(factorio(5));
     }
 }

@@ -19,7 +19,7 @@ public class Anagram
                     }
                 }
             }
-            if (counter == input1.length())
+            if (counter == input2.length())
             {
                 return true;
             }
