@@ -1,8 +1,9 @@
 package charsequence;
 
-public class Shifter implements CharSequence{
+public class Shifter implements CharSequence {
   String name;
   int shift;
+
   public Shifter(String name, int shift) {
     this.name = name;
     this.shift = shift;
@@ -16,7 +17,7 @@ public class Shifter implements CharSequence{
   @Override
   public char charAt(int index) {
     int shifting = (shift + index) % name.length();
-      return name.charAt(shifting);
+    return name.charAt(shifting);
   }
 
   @Override

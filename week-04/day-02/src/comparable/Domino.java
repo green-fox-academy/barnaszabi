@@ -24,17 +24,17 @@ public class Domino implements Comparable<Domino> {
 
   @Override
   public int compareTo(Domino that) {
-    if (this.left > that.left){
+    if (this.left > that.left) {
       return 1;
-    }else if (this.left == that.left){
-      if (this.right > that.right){
+    } else if (this.left == that.left) {
+      if (this.right > that.right) {
         return 1;
-      }else if (this.right == that.right){
+      } else if (this.right == that.right) {
         return 0;
-      }else {
+      } else {
         return -1;
       }
-    }else {
+    } else {
       return -1;
     }
   }

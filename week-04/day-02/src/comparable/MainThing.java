@@ -14,7 +14,7 @@ public class MainThing {
     things.get(2).complete();
     things.get(3).complete();
     Collections.sort(things);
-    for (Thing thing:things) {
+    for (Thing thing : things) {
       System.out.println(thing);
     }
   }

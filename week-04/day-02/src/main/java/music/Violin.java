@@ -1,12 +1,12 @@
 package main.java.music;
 
-public class Violin extends  StringedInstrument{
-  public Violin(int numberOfStrings){
+public class Violin extends StringedInstrument {
+  public Violin(int numberOfStrings) {
     name = "Violin";
     this.numberOfStrings = numberOfStrings;
   }
 
-  public Violin(){
+  public Violin() {
     name = "Violin";
     numberOfStrings = 4;
   }
