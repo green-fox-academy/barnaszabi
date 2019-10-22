@@ -10,7 +10,7 @@ import java.util.Random;
 
 @Controller
 public class HelloWorldWebController {
-  @RequestMapping(value = "/web/helloka")
+  @RequestMapping(value = "/web/hello")
   public String helloInLotOfLanguages(@RequestParam String color, @RequestParam String size, Model model){
     Random random = new Random();
     String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",
