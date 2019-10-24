@@ -1,0 +1,96 @@
+body{
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+    justify-content: center;
+    font-family: 'Gill Sans';
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    max-width: 700px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 50%;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 50%;
+    justify-content: center;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+#circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    background-color: #C9C2C1;
+}
+
+#facebook {
+    margin-top: 20px;
+    background-color: #2C27A1;
+}
+
+#twitter {
+    background-color: #6D98FF;
+}
+
+#google {
+    background-color: #DB1616;
+}
+
+input {
+    width: 80%;
+    border: none;
+    border-bottom: grey 1px solid;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border-bottom: 2px green solid;
+    outline: none;
+}
+
+#buttons * {
+    height: 40px;
+    color: white;
+}
+
+button {
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+legend {
+    margin-top: 30px;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#sign {
+    height: 40px;
+    width: 100px;
+    background-color: #16a085;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}

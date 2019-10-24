@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sign up</title>
+        <link rel="stylesheet" href="Style.css" type="text/css">
+    </head>
+    <body>
+        <div class="row">
+            <form action="https://newsletter-ws.herokuapp.com/register" method="POST">
+                <legend>Sign up</legend>
+                <input type="text" placeholder="Username" name="name" class="row">
+                <input type="email" placeholder="E-mail" name="email" class="row">                    <input type="password" placeholder="Password" name="password" class="row">
+                <input type="password" placeholder="Retype password" name="passwordConfirmation" class="row">
+                <button id="sign">SIGN ME UP</button>
+            </form>
+            <div class="column">
+                <p id="circle">OR</p>
+            </div>
+            <form action="" id="buttons">
+                <button id="facebook" formaction="https://www.facebook.com"> Log in with facebook</button>
+                <button id="twitter" formaction="https://twitter.com">Log in with Twitter</button>
+                <button id="google" formaction="https://rowanreputationresources.com/r-i-p-google-plus/">Log in with Google+</button>
+            </form>
+        </div>
+    </body>
+</html>
