@@ -1,0 +1,58 @@
+body {
+    background-color: #D0C9C8;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6E6A69;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: snow;
+}
+
+legend {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+a {
+    text-align: right;
+    color: #6E6A69;
+    margin-bottom: 25px;
+}
+
+form * {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+input {
+    border-radius: 2px;
+    border: 1px grey solid;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    border: 1px solid green;
+    outline: none;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border: 0;
+    margin-bottom: 40px;
+}
