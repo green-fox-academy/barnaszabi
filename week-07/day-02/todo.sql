@@ -1,0 +1,12 @@
+create table task (id int auto_increment primary key not null, description VARCHAR(50) not null, done boolean);
+describe task;
+insert into task (description, done) values ("Walk the dog", false), ("Buy milk", false), ("Do homework", false);
+select * from task;
+insert into task (description, done) values ("Feed the monkey", false);
+update task set done = true where description = "Walk the dog";
+select description from task where done = true;
+update task set description = "Feed the dog" where description = "Feed the monkey";
+select description, done from task;
+update task set done = true where description = "Buy milk";
+delete from task where done = true;
+select * from task;
