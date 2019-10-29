@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+<table>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>species</th>
+        <th>King</th>
+        <th>Good/bad</th>
+    </tr>
+    <tr th:each="account : ${listOfAnimals}">
+        <td th:text="${accountStat.index}"></td>
+        <td th:text="${account.getName()}"></td>
+        <td th:text="${account.getBalance()}"></td>
+        <td th:text="${account.getAnimalType()}"></td>
+        <td>
+            <span th:if="${account.getIsKing()}" style="color:yellow">king</span>
+            <span th:unless="${account.getIsKing()}">not a king</span>
+        </td>
+        <td>
+            <span th:if="${account.getIsGood()}">Good one</span>
+            <span th:unless="${account.getIsGood()}">Bad guy</span>
+        </td>
+    </tr>
+</table>
+<form class="raise" action="/raise" method="POST">
+    <input type="text" name="name" placeholder="name">
+    <button>submit</button>
+</form>
+<form class="add" th:action="@{/add}" method="POST" th:object="${accountToAdd}">
+    <label for="name">Name</label>
+    <input
+            type="text"
+            id="name"
+            name="nameToAdd"
+            th:field="*{name}"
+            placeholder="name">
+
+    <label for="balance">Balance</label>
+    <input
+            type="number"
+            id="balance"
+            name="balance"
+            th:field="*{balance}"
+            placeholder="0">
+
+    <label for="type">Type</label>
+    <input
+            type="text"
+            id="type"
+            name="type"
+            th:field="*{animalType}"
+            placeholder="type">
+
+    <label>Is a king?</label>
+    <select th:field = "*{isKing}">
+        <option value="false">Not a king</option>
+        <option value="true">King</option>
+    </select>
+    <label>Is good?</label>
+    <select th:field = "*{isGood}">
+        <option value="false">Bad guy</option>
+        <option value="true">Good one</option>
+    </select>
+    <button>submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    background-color: #8EE18E ;
+}
+
+td, tr, th {
+    border: 1px black solid;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.add {
+    margin-top: 20px;
+    display: block;
+}

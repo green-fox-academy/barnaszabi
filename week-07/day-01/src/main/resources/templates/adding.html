@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+<form th:action="@{/add}" method="POST" th:object="${accountToAdd}">
+    <label for="name">Name</label>
+    <input
+            type="text"
+            id="name"
+            name="nameToAdd"
+            placeholder="name"
+            th:field="*{name}">
+
+    <label for="balance">Balance</label>
+    <input
+            type="text"
+            id="balance"
+            name="balance"
+            placeholder="0"
+            th:field="*{balance}">
+
+    <label for="type">Type</label>
+    <input
+            type="text"
+            id="type"
+            name="type"
+            placeholder="type"
+            th:field="*{animalType}">
+
+    <label for="isKing">Is a king?</label>
+    <input
+            type="text"
+            id="isKing"
+            name="isKing"
+            placeholder="true/false"
+            th:field="*{isKing}">
+
+    <label for="isGood">Is good?</label>
+    <input
+            type="text"
+            id="isGood"
+            name="isGood"
+            placeholder="true/false"
+            th:field="*{isGood}">
+
+    <button>submit</button>
+</form>
+</body>
+</html>
