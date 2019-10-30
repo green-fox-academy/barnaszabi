@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/useful/colored}">Colored page</a><br>
+<a th:href="@{/useful/email?email=is@this.valid}">email example: is@this.valid</a><br>
+<a th:href="@{/useful/encode?text=text&number=1}">encode 'text'</a><br>
+<a th:href="@{/useful/decode?text=ufyu&number=1}">decode back to 'text'</a><br>
+</body>
+</html>
