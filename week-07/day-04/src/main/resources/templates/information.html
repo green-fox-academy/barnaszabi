@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/information.css" type="text/css">
+    <title>Infos</title>
+</head>
+<body>
+    <div class="navBar">
+        <button><a th:href="@{/(userName=${userName})}">INFORMATION</a></button>
+        <button><a th:href="@{/foodstore(userName=${userName})}">FOOD STORE</a></button>
+        <button><a th:href="@{/drinkstore(userName=${userName})}">DRINK STORE</a></button>
+        <button><a th:href="@{/learning(userName=${userName})}">LEARNING CENTER</a></button>
+        <button><a th:href="@{/logout}">LOG OUT</a></button>
+    </div>
+    <div class="content">
+        <div class="coin">
+            <img src="/coin.jpg">
+            <p th:text="|${money} $|"></p>
+        </div>
+        <img src="/greenfox.png">
+        <p th:if="${text != null}" th:text="${text}"></p>
+        <ul th:if="${tricks.size() > 0}">
+            <li th:each="trick: ${tricks}" th:text="${trick.getStatus()}"></li>
+        </ul>
+        <p th:unless="${tricks.size() > 0}">Your fox knows nothing.</p>
+        </div>
+</body>
+</html>

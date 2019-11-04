@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/information.css" type="text/css">
+    <title>LEARNING CENTER</title>
+</head>
+<body>
+<div class="navBar">
+    <button><a th:href="@{/(userName=${userName})}">INFORMATION</a></button>
+    <button><a th:href="@{/foodstore(userName=${userName})}">FOOD STORE</a></button>
+    <button><a th:href="@{/drinkstore(userName=${userName})}">DRINK STORE</a></button>
+    <button><a th:href="@{/learning(userName=${userName})}">LEARNING CENTER</a></button>
+    <button><a th:href="@{/logout}">LOG OUT</a></button>
+</div>
+<div class="content">
+    <p th:if="${error} != null" th:style="|color: red|" th:text="${error}"></p>
+    <form th:action="@{/learning(userName=${userName})}" method="POST">
+        <label for="tricks">What do you want your fox to learn?</label>
+        <select name="trick" id="tricks">
+            <option th:each="trick: ${tricks}" th:value="${trick}" th:text="${trick.getStatus()}"></option>
+        </select>
+        <button type="submit">LEARN</button>
+    </form>
+</div>
+</body>
+</html>

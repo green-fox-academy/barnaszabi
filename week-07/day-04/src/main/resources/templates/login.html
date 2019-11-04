@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/forms.css" type="text/css">
+        <Title>Login</Title>
+    </head>
+    <body>
+        <form th:action="@{/login}" th:method="POST">
+            <legend>ACCOUNT LOGIN</legend>
+            <p th:if="${error} != null" th:style="|color: red|" th:text="${error}"></p>
+            <label for="username">USERNAME</label>
+            <input 
+            autocomplete="off" 
+            type="text" 
+            id="username" 
+            name="userName">
+            <label for="password">PASSWORD</label>
+            <input 
+            type="password" 
+            id="password" 
+            name="password">
+            <a href="">forgot password?</a>
+            <a href="/registration">Don't have an account?</a>
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>

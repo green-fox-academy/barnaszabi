@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/forms.css" type="text/css">
+</head>
+<body>
+    <form th:action="@{/registration}" th:method="POST">
+        <legend>REGISTRATION</legend>
+        <p th:if="${error} != null" th:style="|color: red|" th:text="${error}"></p>
+        <label for="userName">USERNAME</label>
+        <input 
+        autocomplete="off"
+        type="text"
+        id="userName"
+        name="userName">
+        <label for="foxName">YOUR FOX'S NAME</label>
+        <input 
+        autocomplete="off"
+        type="text" 
+        name="foxName" 
+        id="foxName">
+        <label for="password">PASSWORD</label>
+        <input 
+        type="password"
+        id="password"
+        name="password">
+        <label for="passwordVal">CONFIRM YOUR PASSWORD</label>
+        <input 
+        type="password"
+        id="passwordVal"
+        name="passwordVal">
+        <button type="submit">REGISTER</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/information.css" type="text/css">
+    <title>DRINK STORE</title>
+</head>
+<body>
+<div class="navBar">
+    <button><a th:href="@{/(userName=${userName})}">INFORMATION</a></button>
+    <button><a th:href="@{/foodstore(userName=${userName})}">FOOD STORE</a></button>
+    <button><a th:href="@{/drinkstore(userName=${userName})}">DRINK STORE</a></button>
+    <button><a th:href="@{/learning(userName=${userName})}">LEARNING CENTER</a></button>
+    <button><a th:href="@{/logout}">LOG OUT</a></button>
+</div>
+<div class="content">
+    <form th:action="@{/drinkstore(userName=${userName})}" method="POST">
+        <label for="drinks">What do you want to feed to your fox</label>
+        <select name="drinks" id="drinks">
+            <option th:each="drink: ${drinks}" th:value="${drink}" th:text="${drink}"></option>
+        </select>
+        <button type="submit">DRINK</button>
+    </form>
+</div>
+</body>
+</html>
