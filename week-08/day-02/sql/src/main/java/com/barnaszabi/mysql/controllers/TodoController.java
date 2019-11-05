@@ -44,4 +44,16 @@ public class TodoController {
     repository.deleteById(id);
     return "redirect:/todo/list";
   }
+
+  @GetMapping(value = "/{id}/update")
+  public String update(@PathVariable(name = "id") Long id, Model model){
+    model.addAttribute("todo", repository.findById(id).orElse(null));
+    return "update";
+  }
+
+  @PostMapping(value = "/{id}/update")
+  String updateDb(@ModelAttribute(name = "todo") Todo todo){
+    repository.save(todo);
+    return "redirect:/todo/list";
+  }
 }
