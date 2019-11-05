@@ -8,18 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MysqlApplication implements CommandLineRunner {
-  @Autowired
-  private TodoRepository repository;
+public class MysqlApplication{
 
   public static void main(String[] args) {
     SpringApplication.run(MysqlApplication.class, args);
   }
 
-  @Override
-  public void run(String... args) throws Exception {
-    repository.save(new Todo("daily task", false));
-    repository.save(new Todo("tidy up", true));
-    repository.save(new Todo("vacuum the carpet", false));
-  }
 }
