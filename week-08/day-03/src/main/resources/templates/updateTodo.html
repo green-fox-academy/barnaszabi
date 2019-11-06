@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{'/todo/' + ${todo.id} + '/update'}" th:method="POST" th:object="${todo}">
+    <label for="title">Title</label>
+    <input id="title" type="text" th:field="*{title}">
+    <label for="done">Is it urgent?</label>
+    <select id="done" th:field="*{done}">
+        <option value="true">YES</option>
+        <option value="false">NO</option>
+    </select>
+    <label for="urgent">Is it urgent?</label>
+    <select id="urgent" th:field="*{urgent}">
+        <option value="true">YES</option>
+        <option value="false">NO</option>
+    </select>
+    <label for="assignee">Assignee</label>
+    <select id="assignee" th:field="*{assigneeId}">
+        <option th:each="assignee : ${assignees}" th:value="${assignee.id}" th:text="${assignee.name}"></option>
+    </select>
+    <button type="submit">ADD</button>
+</form>
+</body>
+</html>
