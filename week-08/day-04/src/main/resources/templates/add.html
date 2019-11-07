@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/add}" th:method="POST" th:object="${newPost}">
+        <label for="title">Title</label>
+        <input type="text"
+               name="title"
+               id="title"
+               th:field="*{title}">
+        <label for="url">URL</label>
+        <input type="text"
+               name="url"
+               id="url"
+               th:field="*{url}">
+        <button type="submit">add</button>
+    </form>
+</body>
+</html>
