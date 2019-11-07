@@ -8,6 +8,17 @@
 <body>
     <a th:href="@{/todo/add}">Add new todo.</a>
     <a th:href="@{/assignee/list}">Assignees</a>
+    <form th:action="@{/todo/search}" th:method="POST">
+        <label for="what">Search by:</label>
+        <select id="what" name="searchByWhat">
+            <option th:value="title">Title</option>
+            <option th:value="creation">Creation date</option>
+            <option th:value="due">Due date</option>
+            <option th:value="assignee">Assignee</option>
+        </select>
+        <input type="search" name="search">
+        <button type="submit">search</button>
+    </form>
     <h1>Todos for today:</h1>
     <table>
         <tr>
@@ -15,12 +26,18 @@
             <th>ACTION</th>
             <th>DONE</th>
             <th>URGENT</th>
+            <th>CREATED</th>
+            <th>DUE</th>
+            <th>ASSIGNEE</th>
         </tr>
         <tr th:each="todo :${list}">
             <td th:text="${todo.getId()}"></td>
             <td th:text="${todo.getTitle()}"></td>
             <td th:text="${todo.isDone()}"></td>
             <td th:text="${todo.isUrgent()}"></td>
+            <td th:text="${todo.getCreation()}"></td>
+            <td th:text="${todo.getDueDate()}"></td>
+            <td><a th:if="${todo.assignee} != null" th:href="@{'/assignee/'+ ${todo.assignee.id} + '/todos'}" th:text="${todo.assignee.name}"></a></td>
             <td><a th:href="@{'/todo/delete/' + ${todo.id}}">delete</a></td>
             <td><a th:href="@{'/todo/' + ${todo.id} + '/update'}">update</a></td>
         </tr>

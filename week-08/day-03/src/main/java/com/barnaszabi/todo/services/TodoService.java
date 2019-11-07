@@ -1,5 +1,6 @@
 package com.barnaszabi.todo.services;
 
+import com.barnaszabi.todo.models.Assignee;
 import com.barnaszabi.todo.models.Todo;
 import com.barnaszabi.todo.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,24 @@ public class TodoService implements ITodoService{
   @Override
   public void delete(Long id){
     repository.deleteById(id);
+  }
+
+  @Override
+  public List<Todo> findByAssignee(Assignee assignee) {
+    return repository.findAllByAssignee(assignee);
+  }
+
+  @Override
+  public List<Todo> search(String searchByWhat, String searched){
+    if (searchByWhat.equals("title")){
+      return repository.findAllByTitleContainsIgnoreCase(searched);
+    } else if (searchByWhat.equals("creation")){
+      return repository.findAllByCreationContainsIgnoreCase(searched);
+    } else if (searchByWhat.equals("due")){
+      return repository.findAllByDueDateContainsIgnoreCase(searched);
+    }else if (searchByWhat.equals("assignee")){
+      return repository.findAllByAssigneeNameContainsIgnoreCase(searched);
+    }
+    return null;
   }
 }

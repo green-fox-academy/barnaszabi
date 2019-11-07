@@ -61,8 +61,18 @@ public class TodoController {
 
   @PostMapping(value = "/{id}/update")
   public String updateTodo(@ModelAttribute(name = "todo") Todo todo){
+    if (todo.getAssigneeId() != null) {
     todo.setAssignee(assigneeService.findById(Long.parseLong(todo.getAssigneeId())));
+    }
+    todo.setCreation(todoService.findById(todo.getId()).getCreation());
     todoService.save(todo);
     return "redirect:/todo/list";
+  }
+
+  @PostMapping(value = "/search")
+  public String search(Model model, @RequestParam(name = "searchByWhat") String searchByWhat ,@RequestParam(name = "search") String searched){
+    List<Todo> found = todoService.search(searchByWhat, searched);
+    model.addAttribute("list", found);
+    return "todoList";
   }
 }

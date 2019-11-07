@@ -4,8 +4,12 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.event.spi.SaveOrUpdateEvent;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -18,7 +22,9 @@ public class Todo {
   private String title;
   private boolean urgent;
   private boolean done;
-  @ManyToOne(cascade = CascadeType.ALL)
+  private String creation = formatDate();
+  private String dueDate;
+  @ManyToOne(cascade = CascadeType.MERGE)
   @Setter(AccessLevel.NONE)
   private Assignee assignee;
   @Transient
@@ -27,5 +33,12 @@ public class Todo {
   public void setAssignee(Assignee assignee){
     assignee.addTodo(this);
     this.assignee = assignee;
+  }
+
+  private String formatDate(){
+    String strDateFormat = "yyyy-MM-dd";
+    DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+    String formattedDate= dateFormat.format(new Date());
+    return formattedDate;
   }
 }
