@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.criteria.CriteriaBuilder;
 
 @Controller
-public class PostController {
+public class PostController{
   private IPostService service;
 
   @Autowired
@@ -20,7 +20,7 @@ public class PostController {
 
   @GetMapping(value = {"", "/{page}"})
   public String listPosts(@PathVariable(name = "page", required = false) Integer page, Model model){
-    if (page == null){
+    if (page == null || page == 0){
       page = 1;
     }
     model.addAttribute("posts", service.listAll(page));

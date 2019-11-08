@@ -14,6 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "posts")
 public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +23,12 @@ public class Post {
   private String url;
   private int points = 0;
   private String date = formatDate();
+  @ManyToOne
+  private User creator;
 
   private String formatDate() {
     String strDateFormat = "yyyy.MM.dd HH:mm";
     DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-    String formattedDate = dateFormat.format(new Date());
-    return formattedDate;
+    return dateFormat.format(new Date());
   }
 }
